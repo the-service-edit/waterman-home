@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Waterman Property Advocates | Adelaide Buyer's &amp; Vendor Advocates</title>
+<meta name="description" content="Adelaide's first buyer's agency. Independent buyer and vendor advocacy with over 30 years of South Australian property experience." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0072CE;          /* exact Waterman brand blue */
+  --blue-deep:#005AA6;
+  --navy:#002A4E;
+  --ink:#0E1116;
+  --grey:#6E7479;          /* brand grey */
+  --text:#1C2128;
+  --line:#E7E9EC;
+  --bg:#FFFFFF;
+  --bg-soft:#F5F6F7;
+  --pale:#E9F2FB;
+  --maxw:1200px;
+  --pad:clamp(22px,5vw,72px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:var(--grey);background:var(--bg);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:"Jost",sans-serif;color:var(--navy);font-weight:500;line-height:1.15;letter-spacing:.01em}
+.shell{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+
+/* uppercase display + labels */
+.kick{font-family:"Jost";font-size:12.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--blue)}
+.kick.dk{color:#BFE0FA}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:"Jost";font-weight:500;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:16px 30px;border:1.5px solid transparent;cursor:pointer;transition:.25s;border-radius:1px}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-deep)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--blue)}
+.btn-ghost{border-color:#fff;color:#fff;background:transparent}
+.btn-ghost:hover{background:#fff;color:var(--navy)}
+.btn-out{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-out:hover{background:var(--navy);color:#fff}
+
+/* ===== nav ===== */
+header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.wm{display:flex;flex-direction:column;line-height:1}
+.wm .a{font-family:"Hanken Grotesk";font-weight:700;font-size:23px;letter-spacing:.13em;color:var(--blue)}
+.wm .b{font-family:"Hanken Grotesk";font-weight:500;font-size:10.5px;letter-spacing:.235em;color:var(--grey);margin-top:4px}
+.menu{display:flex;gap:34px;align-items:center}
+.menu a{font-family:"Jost";font-size:14px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--text);transition:.2s}
+.menu a:hover{color:var(--blue)}
+.navend{display:flex;align-items:center;gap:18px}
+.navtel{font-family:"Jost";font-weight:500;font-size:14px;letter-spacing:.04em;color:var(--navy);white-space:nowrap}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:8px;cursor:pointer}
+.burger span{width:24px;height:2px;background:var(--navy)}
+@media(max-width:980px){.menu,.navtel,.navend .btn{display:none}.burger{display:flex}}
+
+.scrim{position:fixed;inset:0;background:rgba(8,12,18,.5);z-index:70;opacity:0;pointer-events:none;transition:.3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(84vw,330px);background:#fff;z-index:80;transform:translateX(100%);transition:transform .33s cubic-bezier(.4,0,.2,1);padding:28px;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.drawer .x{align-self:flex-end;background:none;border:0;font-size:30px;cursor:pointer;color:var(--navy);line-height:1}
+.drawer a{font-family:"Jost";text-transform:uppercase;letter-spacing:.1em;font-size:16px;color:var(--navy);padding:14px 0;border-bottom:1px solid var(--line)}
+.drawer .btn{margin-top:20px;justify-content:center}
+
+/* ===== hero ===== */
+.hero{position:relative;min-height:84vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--navy)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero .wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,42,78,.72),rgba(0,60,110,.74)),linear-gradient(120deg,rgba(0,114,206,.32),transparent 70%)}
+.hero .in{position:relative;z-index:2;color:#fff;padding:120px var(--pad);max-width:980px}
+.hero h1{color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(30px,5.2vw,62px);line-height:1.12}
+.hero .sub{margin:26px auto 0;max-width:50ch;font-size:clamp(15px,1.4vw,18px);color:rgba(255,255,255,.86);font-weight:400}
+.hero .acts{margin-top:38px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero .micro{margin-top:30px;font-family:"Jost";font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+/* ===== trust strip ===== */
+.trust{border-bottom:1px solid var(--line)}
+.trust .row{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust .c{padding:34px 18px;text-align:center;border-right:1px solid var(--line)}
+.trust .c:last-child{border-right:0}
+.trust .n{font-family:"Jost";font-size:clamp(24px,2.6vw,34px);font-weight:500;color:var(--navy)}
+.trust .n em{font-style:normal;color:var(--blue)}
+.trust .t{font-size:13px;letter-spacing:.04em;margin-top:6px;text-transform:uppercase;font-family:"Jost"}
+@media(max-width:720px){.trust .row{grid-template-columns:1fr 1fr}.trust .c:nth-child(2){border-right:0}.trust .c:nth-child(1),.trust .c:nth-child(2){border-bottom:1px solid var(--line)}}
+
+/* ===== about ===== */
+.section{padding-block:clamp(64px,8vw,118px)}
+.about .g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,84px);align-items:center}
+.about .pic{position:relative;background:var(--bg-soft);aspect-ratio:4/5;overflow:hidden}
+.about .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.about .pic .frame{position:absolute;left:-16px;top:-16px;right:28px;bottom:28px;border:1px solid var(--blue);z-index:-0;pointer-events:none}
+.about h2{font-size:clamp(28px,3.6vw,46px);margin:18px 0 0;font-weight:500}
+.about p{margin-top:20px;max-width:50ch}
+.about p+p{margin-top:14px}
+.about .btn{margin-top:32px}
+@media(max-width:820px){.about .g{grid-template-columns:1fr;gap:34px}.about .pic{max-width:460px;aspect-ratio:3/4}}
+
+/* ===== services (circle cluster) ===== */
+.services{background:var(--bg-soft)}
+.services .g{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:center}
+.services h2{font-size:clamp(34px,4.6vw,58px);font-weight:600;margin:16px 0 22px}
+.services .lead{max-width:34ch}
+.services .btn{margin-top:30px}
+.svc-list{border-top:1px solid var(--line)}
+.svc-item{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 2px;border-bottom:1px solid var(--line);transition:padding-left .3s ease,background .3s}
+.svc-item:hover{padding-left:14px;background:rgba(0,114,206,.04)}
+.svc-item .ix{font-family:"Jost";font-size:13px;font-weight:500;color:var(--blue);letter-spacing:.12em}
+.svc-item .nm{font-family:"Jost";font-size:20px;font-weight:500;color:var(--navy);display:block;line-height:1.2}
+.svc-item .ds{display:block;font-size:14px;color:var(--grey);margin-top:5px;line-height:1.5}
+.svc-item .ar{color:var(--blue);font-family:"Jost";font-size:19px;transition:transform .3s}
+.svc-item:hover .ar{transform:translateX(6px)}
+@media(max-width:820px){.services .g{grid-template-columns:1fr;gap:40px}}
+@media(max-width:560px){
+  .svc-item{gap:16px;padding:18px 2px}
+  .svc-item .nm{font-size:18px}
+}
+
+/* ===== reviews ===== */
+.reviews{text-align:center}
+.reviews h2{font-size:clamp(28px,3.6vw,44px);font-weight:500;margin:16px auto 0;max-width:18ch}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:clamp(40px,5vw,60px);text-align:left}
+.rev{border:1px solid var(--line);border-radius:2px;padding:30px 28px;background:#fff}
+.rev .stars{color:var(--blue);letter-spacing:3px;font-size:14px}
+.rev p{margin:14px 0 18px;color:var(--text);font-size:16px}
+.rev cite{font-style:normal;font-family:"Jost";font-weight:500;font-size:13.5px;letter-spacing:.04em;color:var(--navy)}
+.rev cite span{display:block;color:var(--grey);font-weight:400;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+@media(max-width:820px){.rgrid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+
+/* ===== contact band ===== */
+.band{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;text-align:center}
+.band .in{padding:clamp(60px,8vw,104px) var(--pad)}
+.band h2{color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(26px,3.8vw,46px);max-width:20ch;margin-inline:auto}
+.band p{margin:18px auto 0;max-width:46ch;color:rgba(255,255,255,.85)}
+.band .acts{margin-top:34px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.band .tel{font-family:"Jost";letter-spacing:.04em;color:#fff;display:inline-flex;align-items:center;font-size:15px}
+
+/* ===== footer (dark, matches logo's black background) ===== */
+footer{background:#000000;color:rgba(255,255,255,.66);border-top:1px solid var(--line)}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-block:64px 40px}
+.foot .wm .a{color:var(--blue)}.foot .wm .b{color:#9aa0a8}
+.foot .d{margin-top:16px;font-size:14.5px;max-width:36ch;color:rgba(255,255,255,.6)}
+.foot h5{font-family:"Jost";text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;color:#fff;font-weight:500;margin-bottom:16px}
+.foot ul{list-style:none;display:grid;gap:10px}
+.foot ul a{color:rgba(255,255,255,.66)}
+.foot ul a:hover{color:#fff}
+.foot .memb{display:flex;gap:10px;margin-top:18px}
+.foot .memb span{border:1px solid rgba(255,255,255,.18);background:transparent;padding:8px 13px;font-family:"Jost";font-size:12px;letter-spacing:.06em;color:#fff;font-weight:500}
+.foot .soc{display:flex;gap:10px;margin-top:18px}
+.foot .soc a{width:38px;height:38px;border:1px solid rgba(255,255,255,.18);background:transparent;border-radius:2px;display:grid;place-items:center;color:#fff;transition:.2s}
+.foot .soc a:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.foot .soc svg{width:17px;height:17px}
+.fbot{border-top:1px solid rgba(255,255,255,.14);padding-block:22px;display:flex;justify-content:space-between;gap:16px;font-size:13px;flex-wrap:wrap;color:rgba(255,255,255,.5)}
+.fbot a:hover{color:#fff}
+@media(max-width:760px){.foot{grid-template-columns:1fr;gap:32px;text-align:left}}
+
+/* values columns */
+.vals{text-align:center}
+.vals .vals-h{font-size:clamp(28px,3.6vw,44px);font-weight:500;margin:16px auto 0;max-width:20ch}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(30px,4vw,56px);margin-top:clamp(40px,5vw,64px);text-align:left}
+.val{border-top:2px solid var(--blue);padding-top:22px}
+.val .vn{font-family:"Jost";font-size:34px;font-weight:500;color:var(--blue);display:block;line-height:1}
+.val h4{font-family:"Jost";font-weight:500;font-size:21px;color:var(--navy);margin:14px 0 10px}
+.val p{color:var(--grey);font-size:16px}
+@media(max-width:820px){.vgrid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+
+/* team */
+.team{background:var(--bg-soft)}
+.team .kick{display:block;text-align:center}
+.team .team-h{font-size:clamp(28px,3.6vw,44px);font-weight:500;margin:16px auto 0;text-align:center}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,34px);margin-top:clamp(40px,5vw,64px)}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
+.tpic{aspect-ratio:4/5;background:linear-gradient(135deg,#002A4E,#0072CE);overflow:hidden}
+.tpic img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.tcard h3{font-family:"Jost";font-weight:500;font-size:22px;color:var(--navy);margin:22px 26px 0}
+.trole{font-family:"Jost";font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:6px 26px 0}
+.tcard p{margin:13px 26px 26px;font-size:15px;color:var(--grey)}
+@media(max-width:820px){.tgrid{grid-template-columns:1fr;max-width:400px;margin-inline:auto}}
+
+/* content always visible (no fade-in that reads as empty) */
+.rv{opacity:1;transform:none}
+.wm-img{height:40px;width:auto;max-width:100%;display:block;align-self:flex-start}
+.wm-fallback{display:none;flex-direction:column;line-height:1}
+.grating{text-align:center;margin-top:16px;font-size:16px;color:var(--grey)}
+.grating .s{color:#F5A524;letter-spacing:2px;margin-right:8px}
+.grating strong{color:var(--navy);font-weight:600}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shell nav">
+    <a href="#top" class="wm" aria-label="Waterman Property Advocates">
+      <img class="wm-img" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/69e89e02a48992f6898baca8.jpg" alt="Waterman Property Advocates" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="wm-fallback"><span class="a">WATERMAN</span><span class="b">PROPERTY ADVOCATES</span></span>
+    </a>
+    <nav class="menu">
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#team">Team</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="navend">
+      <a href="tel:0477000798" class="navtel">0477 000 798</a>
+      <a href="#contact" class="btn btn-dark">Contact Us</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <button class="x" id="x" aria-label="Close">&times;</button>
+  <a href="#top">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#team">Team</a>
+  <a href="#why">Why Us</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact" class="btn btn-blue">Contact Us</a>
+</aside>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <img class="bg" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=70" alt="Adelaide home" onerror="this.style.display='none'">
+  <div class="wash"></div>
+  <div class="in">
+    <div class="kick dk">Buyer &amp; Vendor Advocates · Adelaide SA</div>
+    <h1 style="margin-top:22px">On your side of<br>the property market</h1>
+    <p class="sub">Adelaide's first buyer's agency. Independent advice and three decades of local knowledge, so you buy at the right price and sell for the best one.</p>
+    <div class="acts">
+      <a href="#contact" class="btn btn-blue">Book a free consult</a>
+      <a href="#services" class="btn btn-ghost">Our services</a>
+    </div>
+    <div class="micro">We save you time, money &amp; stress</div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="shell row">
+    <div class="c"><div class="n">Est. <em>2003</em></div><div class="t">Adelaide's first</div></div>
+    <div class="c"><div class="n"><em>30</em>+ yrs</div><div class="t">In the SA market</div></div>
+    <div class="c"><div class="n"><em>100%</em></div><div class="t">Independent</div></div>
+    <div class="c"><div class="n">REBAA · REISA</div><div class="t">Accredited members</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="shell g">
+    <div class="pic rv">
+      <span class="frame"></span>
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=70" alt="Adelaide home interior" onerror="this.parentNode.style.background='linear-gradient(135deg,#002A4E,#0072CE)'">
+    </div>
+    <div class="txt rv">
+      <div class="kick">About Waterman</div>
+      <h2>Adelaide's original buyer's agency.</h2>
+      <p>Founded in 2003 as the first dedicated buyer's agency in Adelaide, Waterman represents buyers and sellers, never the agent on the other side of the deal.</p>
+      <p>With more than thirty years in the South Australian market, we research, inspect, value and negotiate every step, so the result lands in your favour. We save you time, money and stress.</p>
+      <a href="#why" class="btn btn-out">More about us</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="shell g">
+    <div class="rv">
+      <div class="kick">What we do</div>
+      <h2>Services</h2>
+      <p class="lead">Fully licensed across both sides of the transaction: buying, selling, downsizing and estate clearances, handled by one experienced team.</p>
+      <a href="#contact" class="btn btn-blue">Get in touch</a>
+    </div>
+    <div class="svc-list rv">
+      <div class="svc-item"><span class="ix">01</span><div><span class="nm">Buyer Advocacy</span><span class="ds">Find, value and win the right property, on your terms.</span></div><span class="ar">&rarr;</span></div>
+      <div class="svc-item"><span class="ix">02</span><div><span class="nm">Vendor Advocacy</span><span class="ds">Independent guidance and oversight when you sell.</span></div><span class="ar">&rarr;</span></div>
+      <div class="svc-item"><span class="ix">03</span><div><span class="nm">Negotiation</span><span class="ds">Experienced deal-making that lands the result in your favour.</span></div><span class="ar">&rarr;</span></div>
+      <div class="svc-item"><span class="ix">04</span><div><span class="nm">Off-market Access</span><span class="ds">Quality homes before they reach the open market.</span></div><span class="ar">&rarr;</span></div>
+      <div class="svc-item"><span class="ix">05</span><div><span class="nm">Downsizing</span><span class="ds">A calmer, well-managed move to your next home.</span></div><span class="ar">&rarr;</span></div>
+      <div class="svc-item"><span class="ix">06</span><div><span class="nm">Property Clearances</span><span class="ds">Full estate and property clearances, handled end to end.</span></div><span class="ar">&rarr;</span></div>
+      <div class="svc-item"><span class="ix">07</span><div><span class="nm">Realty</span><span class="ds">Fully licensed across both sides of the transaction.</span></div><span class="ar">&rarr;</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section vals" id="why">
+  <div class="shell">
+    <div class="kick" style="text-align:center">Why Waterman</div>
+    <h2 class="vals-h">The difference is whose side we're on.</h2>
+    <div class="vgrid">
+      <div class="val">
+        <span class="vn">01</span>
+        <h4>Completely independent</h4>
+        <p>We never take commissions or kickbacks from selling agents. You're the only client we answer to.</p>
+      </div>
+      <div class="val">
+        <span class="vn">02</span>
+        <h4>Thirty years of local knowledge</h4>
+        <p>We know which Adelaide streets hold value, which are overpriced, and what's about to move.</p>
+      </div>
+      <div class="val">
+        <span class="vn">03</span>
+        <h4>Negotiation that pays for itself</h4>
+        <p>We negotiate property for a living, so what we save you typically covers our fee several times over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section team" id="team">
+  <div class="shell">
+    <div class="kick">Meet the team</div>
+    <h2 class="team-h">The people on your side</h2>
+    <div class="tgrid">
+      <article class="tcard">
+        <div class="tpic"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1f9946098539f718270e84.jpg" alt="Chris Waterman" onerror="this.style.display='none'"></div>
+        <h3>Chris Waterman</h3>
+        <div class="trole">Founder &middot; Buyer Agent &amp; Vendor Advocate</div>
+        <p>Founded Waterman in 2003 as Adelaide's first buyer's agent. Over 40 years in South Australian real estate, and a registered land agent and auctioneer.</p>
+      </article>
+      <article class="tcard">
+        <div class="tpic"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1e5f11d53fc25488fb51e0.jpg" alt="Jodi Weston" onerror="this.style.display='none'"></div>
+        <h3>Jodi Weston</h3>
+        <div class="trole">Director &middot; Vendor Advocate</div>
+        <p>More than 18 years in property with a full Land Agent's Licence. Honest, dedicated guidance that makes selling smooth, well informed and stress free.</p>
+      </article>
+      <article class="tcard">
+        <div class="tpic"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1f98289e7a0d5a8b3c93ee.jpg" alt="Matt O'Donoghue" onerror="this.style.display='none'"></div>
+        <h3>Matt O'Donoghue</h3>
+        <div class="trole">Director &middot; Buyer Agent</div>
+        <p>25 years in real estate and an award winning former agent. Deep market knowledge and genuine integrity on every purchase.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="shell">
+    <div class="kick" style="text-align:center">Client experiences</div>
+    <h2 class="rv">Results clients talk about.</h2>
+    <div class="grating rv"><span class="s">★★★★★</span><strong>4.9</strong> from 45 Google reviews</div>
+    <div class="rgrid">
+      <div class="rev rv">
+        <div class="stars">★★★★★</div>
+        <p>"Engaging Matt as our buyer's advocate was the best decision we made in the entire home-buying process. We simply could not have purchased our home without him."</p>
+        <cite>Sarah George<span>Buyer · Google review</span></cite>
+      </div>
+      <div class="rev rv">
+        <div class="stars">★★★★★</div>
+        <p>"I bought my first home with the help of Jess from Watermans. Her expertise was invaluable in securing the purchase, and in knowing it was a fair price. Wouldn't hesitate to recommend to anyone."</p>
+        <cite>Ben Dollman<span>First-home buyer · Google review</span></cite>
+      </div>
+      <div class="rev rv">
+        <div class="stars">★★★★★</div>
+        <p>"We highly recommend Watermans and their team if you're wanting to get your property to market. Everything coordinated and taken care of for us, great communication, and all for incredibly reasonable charges."</p>
+        <cite>Meg<span>Vendor · Google review</span></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BAND -->
+<section class="band" id="contact">
+  <div class="in">
+    <div class="kick dk">Get in touch</div>
+    <h2 style="margin-top:18px">Contact us to book your free consult</h2>
+    <p>A no-obligation conversation about what you're buying, selling or downsizing, and how we make it happen for a better result.</p>
+    <div class="acts">
+      <a href="tel:0477000798" class="btn btn-ghost">Buying · 0477 000 798</a>
+      <a href="tel:0412967256" class="btn btn-ghost">Selling · 0412 967 256</a>
+    </div>
+    <p style="margin-top:22px"><a href="mailto:admin@watermanpa.com.au" class="tel">admin@watermanpa.com.au</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="shell">
+    <div class="foot">
+      <div>
+        <div class="wm"><img class="wm-img" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/69e89e02a48992f6898baca8.jpg" alt="Waterman Property Advocates" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="wm-fallback"><span class="a">WATERMAN</span><span class="b">PROPERTY ADVOCATES</span></span></div>
+        <p class="d">Adelaide's first buyer's agency. Independent buyer and vendor advocacy with over 30 years in the South Australian property market.</p>
+        <div class="memb"><span>Member REBAA</span><span>Member REISA</span></div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Waterman</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:0477000798">Buying · 0477 000 798</a></li>
+          <li><a href="tel:0412967256">Selling · 0412 967 256</a></li>
+          <li><a href="mailto:admin@watermanpa.com.au">admin@watermanpa.com.au</a></li>
+          <li>Adelaide, South Australia</li>
+        </ul>
+        <div class="soc">
+          <a href="https://www.facebook.com/watermanpropertyadvocates" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-1c0-.6.4-1 1-1Z"/></svg></a>
+          <a href="https://www.instagram.com/watermanpropertyadvocates/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.linkedin.com/company/68106700/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5v9H4V8.5h2.94ZM5.47 4a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4ZM20 17.5h-2.9v-4.7c0-1.2-.5-1.9-1.5-1.9s-1.6.7-1.6 1.9v4.7H11v-9h2.8v1.2c.4-.7 1.3-1.4 2.7-1.4 2 0 3.5 1.3 3.5 4v5.2Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="fbot">
+      <div>© <span id="yr"></span> Waterman Property Advocates · Owned &amp; operated in Adelaide, SA</div>
+      <div style="display:flex;gap:18px"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var burger=document.getElementById('burger'),drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim'),x=document.getElementById('x');
+function op(){drawer.classList.add('on');scrim.classList.add('on')}
+function cl(){drawer.classList.remove('on');scrim.classList.remove('on')}
+burger.onclick=op;x.onclick=cl;scrim.onclick=cl;
+drawer.querySelectorAll('a').forEach(function(a){a.onclick=cl});
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
