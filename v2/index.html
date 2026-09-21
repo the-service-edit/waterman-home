@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Waterman Property Advocates | Adelaide Buyer's &amp; Vendor Advocates</title>
-<meta name="description" content="Adelaide's first buyer's agency. Independent buyer and vendor advocacy since 2003, led by more than 40 years of South Australian property experience.">
-<link rel="preload" href="assets/scene-villa.jpg" as="image">
+<link rel="preload" href="../assets/scene-villa.jpg" as="image">
 <style>
-@font-face{font-family:'DM Sans';font-weight:400;font-display:swap;src:url(assets/fonts/dmsans-400.ttf) format('truetype')}
-@font-face{font-family:'DM Sans';font-weight:500;font-display:swap;src:url(assets/fonts/dmsans-500.ttf) format('truetype')}
-@font-face{font-family:'DM Sans';font-weight:600;font-display:swap;src:url(assets/fonts/dmsans-600.ttf) format('truetype')}
+@font-face{font-family:'DM Sans';font-weight:400;font-display:swap;src:url(../assets/fonts/dmsans-400.ttf) format('truetype')}
+@font-face{font-family:'DM Sans';font-weight:500;font-display:swap;src:url(../assets/fonts/dmsans-500.ttf) format('truetype')}
+@font-face{font-family:'DM Sans';font-weight:600;font-display:swap;src:url(../assets/fonts/dmsans-600.ttf) format('truetype')}
 
 :root{
   --blue:#0072CE;--blue-deep:#005AA6;--navy:#002A4E;--sky:#9fcdf2;
@@ -184,41 +183,54 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
   .mbar{display:flex;position:fixed;z-index:50;left:12px;right:12px;bottom:12px;justify-content:center;background:var(--blue);color:#fff;border-radius:30px;padding:15px;font-size:14px;text-decoration:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.45)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.window>img{transition:none}}
+
+/* ===== v2: full width, stacked like the mobile version ===== */
+.topbar{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--rule)}
+.topbar .head{max-width:1240px;margin:0 auto;padding:14px 5%;border:0}
+.topbar .head nav a:last-child{background:var(--blue);color:#fff;border-radius:30px;padding:0 18px;min-height:36px}
+.band{position:relative;margin:0;height:62vh;min-height:440px;overflow:hidden;background:#2a2f33;color:#fff}
+.band-hero{height:calc(100svh - 69px)}
+.band img{width:100%;height:100%;object-fit:cover}
+.band-hero:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.5))}
+.band figcaption{position:absolute;z-index:2;left:0;right:0;bottom:34px;max-width:1240px;margin:0 auto;padding:0 5%}
+.band-title{font:400 clamp(30px,3.4vw,48px)/1.06 var(--sans);letter-spacing:-.045em;max-width:620px;margin-bottom:20px}
+.band .eyeline{display:flex;justify-content:space-between;border-top:1px solid #ffffff77;padding-top:14px;font-size:10px}
+.chapter{min-height:0;padding:0;border-bottom:0}
+.wrap{max-width:1240px;margin:0 auto;padding:80px 5% 96px}
+.intro{min-height:0}
+.intro .eyeline{margin-top:0}
+.intro h1{font-size:clamp(56px,6vw,96px);max-width:900px}
+.intro .lede{max-width:620px;font-size:18px}
+.chapter h2{font-size:clamp(46px,5vw,80px)}
+@media(min-width:1000px){
+  .services .wrap,.diff .wrap,.team .wrap,.reviews .wrap,.contact .wrap{display:grid;grid-template-columns:5fr 7fr;column-gap:6%;align-items:start}
+  .wrap>.idx{grid-column:1/-1;margin-bottom:10px}
+  .wrap>h2{grid-column:1;grid-row:2/span 8;margin-top:40px;position:sticky;top:110px}
+  .wrap>:not(.idx):not(h2){grid-column:2}
+  .services .wrap>details:first-of-type,.diff .wrap>.lede,.team .wrap>.people,.reviews .wrap>.score,.contact .wrap>.lede{margin-top:48px}
+}
+.credits{padding:24px 5%}
+@media(max-width:700px){
+  .topbar .head{padding:12px 22px}
+  .band{height:46svh;min-height:300px}.band-hero{height:64svh}
+  .band figcaption{bottom:22px;padding:0 22px}
+  .band-title{font-size:28px}
+  .wrap{padding:36px 22px 60px}
+  .intro h1{font-size:52px}
+}
 </style>
 </head>
-<body>
+<body class="v2">
 <a class="skip" href="#main">Skip to content</a>
-<main class="layout" id="main">
-
-<aside class="window" aria-label="Adelaide homes">
-  <img class="on" data-scene="home" src="assets/scene-villa.jpg" alt="Bluestone villa with a lacework verandah on a tree-lined Adelaide street">
-  <img data-scene="hallway" src="assets/scene-hallway.jpg" alt="Sunlit villa hallway with moving boxes and the front door open" loading="lazy">
-  <img data-scene="gate" src="assets/scene-gate.jpg" alt="Open iron gate onto a tiled path leading to a sandstone villa" loading="lazy">
-  <img data-scene="chris" src="https://images.leadconnectorhq.com/image/f_webp/q_85/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/69cc79395b5b9d2e2e671d93.jpg" alt="Chris Waterman" loading="lazy">
-  <img data-scene="keys" src="assets/scene-keys.jpg" alt="House keys on a stone kitchen bench in late light" loading="lazy">
-  <img data-scene="verandah" src="assets/scene-verandah.jpg" alt="Two cups and two cane chairs on a villa verandah" loading="lazy">
-  <div class="w-top"><strong>WATERMAN</strong><span class="w-loc">Gilbert St, Adelaide</span></div>
-  <div class="w-bottom">
-    <h2 id="scene-title">Adelaide's first buyer's agency. Since 2003.</h2>
-    <div class="eyeline"><span id="scene-label">Adelaide, South Australia</span><span>Scroll ↓</span></div>
-  </div>
-  <nav class="rail" aria-label="Sections">
-    <a href="#intro" aria-label="Introduction" aria-current="true"></a>
-    <a href="#services" aria-label="How we help"></a>
-    <a href="#difference" aria-label="Why independent"></a>
-    <a href="#team" aria-label="The team"></a>
-    <a href="#reviews" aria-label="Reviews"></a>
-    <a href="#contact" aria-label="Contact"></a>
-  </nav>
-</aside>
-
-<div class="content">
-
-<section class="chapter intro" id="intro" data-scene="home" data-title="Adelaide's first buyer's agency. Since 2003." data-label="Adelaide, South Australia">
-  <header class="head">
-    <a class="logo" href="#intro" aria-label="Waterman Property Advocates"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/69e89e02a48992f6898baca8.jpg" alt="Waterman Property Advocates"></a>
+<div class="topbar"><header class="head">
+    <a class="logo" href="#main" aria-label="Waterman Property Advocates"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/69e89e02a48992f6898baca8.jpg" alt="Waterman Property Advocates"></a>
     <nav><a href="#services">Buy &amp; sell</a><a href="#team">Team</a><a href="#contact">Free consult ↗</a></nav>
-  </header>
+  </header></div>
+<main id="main">
+
+<figure class="band band-hero"><img src="../assets/scene-villa.jpg" alt="Bluestone villa with a lacework verandah on a tree-lined Adelaide street" style="object-position:50% 56%"><figcaption><p class="band-title">Adelaide's first buyer's agency. Since 2003.</p><div class="eyeline"><span>Adelaide, South Australia</span><span>Waterman · Adelaide</span></div></figcaption></figure>
+<section class="chapter intro" id="intro" data-scene="home" data-title="Adelaide's first buyer's agency. Since 2003." data-label="Adelaide, South Australia"><div class="wrap">
+  
   <p class="eyeline">Buyer &amp; vendor advocates · Adelaide</p>
   <h1>On your side<br>of the property<br>market.</h1>
   <p class="lede">Waterman represents buyers and sellers, never the agent on the other side of the deal. Adelaide's first buyer's agency, since 2003, led by Chris Waterman's 40+ years in South Australian property.</p>
@@ -231,9 +243,10 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
     <div><strong>4.9 <em>★</em></strong><span>From 45 Google reviews</span></div>
     <div><strong>REBAA · REISA</strong><span>Accredited members</span></div>
   </div>
-</section>
+</div></section>
 
-<section class="chapter services" id="services" data-scene="hallway" data-title="Buying, selling or moving on." data-label="How we help">
+<figure class="band"><img src="../assets/scene-hallway.jpg" alt="Sunlit villa hallway with moving boxes and the front door open" style="object-position:50% 42%"></figure>
+<section class="chapter services" id="services" data-scene="hallway" data-title="Buying, selling or moving on." data-label="How we help"><div class="wrap">
   <div class="idx"><span>HOW WE HELP</span></div>
   <h2>Buying, selling<br>or moving on?</h2>
   <details open>
@@ -253,9 +266,10 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
     <p>Living and deceased estates cleared across Adelaide, for executors, downsizers and families moving into aged care. Donations and recycling first, then removal, repairs and restoration ready for sale. Site inspection and quote are free.</p>
   </details>
   <p class="aside">For home buyers, investors, sellers, executors and downsizers.</p>
-</section>
+</div></section>
 
-<section class="chapter diff" id="difference" data-scene="gate" data-title="Independent, on one side only." data-label="Why independent">
+<figure class="band"><img src="../assets/scene-gate.jpg" alt="Open iron gate onto a tiled path leading to a sandstone villa" style="object-position:50% 50%"></figure>
+<section class="chapter diff" id="difference" data-scene="gate" data-title="Independent, on one side only." data-label="Why independent"><div class="wrap">
   <div class="idx"><span>WHY INDEPENDENT</span></div>
   <h2>We don't sell<br>property. We<br>represent you.</h2>
   <p class="lede">A selling agent works for the vendor. Waterman works for you, with nothing to gain from which property you buy or which agent you choose.</p>
@@ -265,33 +279,34 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
     <li>Licensed land agents on the team. Chris, Jodi and Matt bring more than 80 years of property experience between them.</li>
   </ul>
   <a class="line-link" href="#contact">Talk it through with us</a>
-</section>
+</div></section>
 
-<section class="chapter team" id="team" data-scene="chris" data-title="Chris Waterman. Founder." data-label="The team">
+<section class="chapter team" id="team" data-scene="chris" data-title="Chris Waterman. Founder." data-label="The team"><div class="wrap">
   <div class="idx"><span>THE TEAM</span></div>
   <h2>The people<br>on your side.</h2>
   <div class="people">
     <article class="person">
-      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1f9946098539f718270e84.jpg" alt="Chris Waterman" loading="lazy">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1f9946098539f718270e84.jpg" alt="Chris Waterman">
       <div><h3>Chris Waterman</h3><p class="role">Founder · Buyer agent &amp; vendor advocate</p>
       <p>Founded Waterman in 2003 as Adelaide's first buyer's agent. More than 40 years of real estate experience in South Australia and the Northern Territory, and a registered land agent and auctioneer.</p></div>
     </article>
     <article class="person">
-      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1e5f11d53fc25488fb51e0.jpg" alt="Jodi Weston" loading="lazy">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1e5f11d53fc25488fb51e0.jpg" alt="Jodi Weston">
       <div><h3>Jodi Weston</h3><p class="role">Director · Vendor advocate</p>
       <p>More than 18 years in property with a full Land Agent's Licence. Jodi looks after sellers from choosing the agent to settlement.</p>
       <a class="direct" href="tel:0412967256">Selling? 0412 967 256</a></div>
     </article>
     <article class="person">
-      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1f98289e7a0d5a8b3c93ee.jpg" alt="Matt O'Donoghue" loading="lazy">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/6a1f98289e7a0d5a8b3c93ee.jpg" alt="Matt O'Donoghue">
       <div><h3>Matt O'Donoghue</h3><p class="role">Director · Buyer agent</p>
       <p>25 years in real estate and an award-winning former agent. Matt finds, assesses and negotiates for buyers and investors.</p>
       <a class="direct" href="tel:0477000798">Buying? 0477 000 798</a></div>
     </article>
   </div>
-</section>
+</div></section>
 
-<section class="chapter reviews" id="reviews" data-scene="keys" data-title="What clients say." data-label="Client experiences">
+<figure class="band"><img src="../assets/scene-keys.jpg" alt="House keys on a stone kitchen bench in late light" style="object-position:50% 38%"></figure>
+<section class="chapter reviews" id="reviews" data-scene="keys" data-title="What clients say." data-label="Client experiences"><div class="wrap">
   <div class="idx"><span>CLIENT EXPERIENCES</span></div>
   <h2>What clients<br>say.</h2>
   <div class="score"><span class="num">4.9</span><span class="stars" aria-hidden="true">★★★★★</span></div>
@@ -306,9 +321,10 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
     <blockquote>“Everything coordinated and taken care of for us, great communication, and all for incredibly reasonable charges.”</blockquote>
     <figcaption>Meg · Vendor · Google review</figcaption></figure>
   <div class="memberships"><span>Member REBAA</span><span>Member REISA</span></div>
-</section>
+</div></section>
 
-<section class="chapter contact" id="contact" data-scene="verandah" data-title="Book a free consult." data-label="Gilbert Street, Adelaide">
+<figure class="band"><img src="../assets/scene-verandah.jpg" alt="Two cups and two cane chairs on a villa verandah" style="object-position:50% 62%"></figure>
+<section class="chapter contact" id="contact" data-scene="verandah" data-title="Book a free consult." data-label="Gilbert Street, Adelaide"><div class="wrap">
   <div class="idx"><span>FREE CONSULT</span></div>
   <h2>Talk to<br>Waterman about<br>your property.</h2>
   <p class="lede">Tell us what you're working on and we'll put you straight through to the right person. The first conversation is free and there's no obligation.</p>
@@ -329,11 +345,9 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
     <p>WATERMAN<br>PROPERTY ADVOCATES</p>
     <p>202a Gilbert Street<br>Adelaide SA 5000<br><a href="tel:0882315407">08 8231 5407</a></p>
   </div>
-</section>
+</div></section>
 
-</div>
 </main>
-
 <footer class="credits">
   <p>© <span id="yr"></span> Waterman Property Advocates · Owned and operated in Adelaide, SA. Homepage concept prepared for Waterman; property imagery is illustrative. Portraits: Waterman Property Advocates.</p>
   <p>Site by <a href="https://theserviceedit.com" target="_blank" rel="noopener">The Service Edit</a></p>
@@ -359,18 +373,6 @@ function route(){var r=routes[topic.value];
   document.getElementById('route-mail').href='mailto:'+r.mail+'?subject='+encodeURIComponent('Free consult: '+r.subject);}
 topic.addEventListener('change',route);
 
-// photo window follows the chapter you're reading (desktop only)
-var chapters=document.querySelectorAll('[data-scene].chapter');
-var io=new IntersectionObserver(function(entries){
-  if(matchMedia('(max-width:700px)').matches)return;
-  entries.forEach(function(e){if(!e.isIntersecting)return;var s=e.target;
-    document.querySelectorAll('.window>img').forEach(function(img){img.classList.toggle('on',img.dataset.scene===s.dataset.scene)});
-    document.getElementById('scene-title').textContent=s.dataset.title;
-    document.getElementById('scene-label').textContent=s.dataset.label;
-    document.querySelectorAll('.rail a').forEach(function(a){a.setAttribute('aria-current',String(a.hash==='#'+s.id))});
-  });
-},{rootMargin:'-25% 0px -55% 0px'});
-chapters.forEach(function(c){io.observe(c)});
 </script>
 </body>
 </html>
