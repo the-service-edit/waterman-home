@@ -11,13 +11,11 @@
 @font-face{font-family:'DM Sans';font-weight:400;font-display:swap;src:url(assets/fonts/dmsans-400.ttf) format('truetype')}
 @font-face{font-family:'DM Sans';font-weight:500;font-display:swap;src:url(assets/fonts/dmsans-500.ttf) format('truetype')}
 @font-face{font-family:'DM Sans';font-weight:600;font-display:swap;src:url(assets/fonts/dmsans-600.ttf) format('truetype')}
-@font-face{font-family:'IBM Plex Mono';font-weight:400;font-display:swap;src:url(assets/fonts/plexmono-400.ttf) format('truetype')}
-@font-face{font-family:'IBM Plex Mono';font-weight:500;font-display:swap;src:url(assets/fonts/plexmono-500.ttf) format('truetype')}
 
 :root{
   --blue:#0072CE;--blue-deep:#005AA6;--navy:#002A4E;--sky:#9fcdf2;
   --paper:#ffffff;--paper-2:#ffffff;--ink:#1d2229;--rule:#c9ccc4;
-  --sans:'DM Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'DM Sans',system-ui,sans-serif;--mono:'DM Sans',system-ui,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -56,7 +54,7 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
 .content{min-width:0}
 .chapter{padding:40px 8% 80px;border-bottom:1px solid #2a2f3322;min-height:760px}
 .chapter h2{font-size:clamp(50px,4.7vw,74px);margin:40px 0 34px}
-.idx{display:flex;justify-content:space-between;border-bottom:1px solid currentColor;padding-bottom:12px;font:10px var(--mono);letter-spacing:.04em;opacity:.8}
+.idx{display:flex;justify-content:flex-start;border-bottom:1px solid currentColor;padding-bottom:12px;font:10px var(--mono);letter-spacing:.04em;opacity:.8}
 .lede{font-size:15px;line-height:1.65;max-width:420px}
 .pill{display:inline-flex;align-items:center;gap:30px;background:var(--blue);color:#fff;border-radius:30px;padding:13px 24px;font-size:13px;text-decoration:none;min-height:46px;transition:background .2s}
 .pill:after{content:'↗';font-size:18px}
@@ -70,15 +68,15 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
 .head .logo img{height:40px;width:auto}
 .head nav{display:flex;gap:26px}
 .head nav a{font:10px var(--mono);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;min-height:30px;display:flex;align-items:center}
-.intro .eyeline{margin-top:34px}
-.intro h1{font-size:clamp(60px,5.6vw,88px);margin:34px 0 36px}
-.intro .lede{margin-left:18%}
-.cta{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:44px;padding-top:22px;border-top:1px solid var(--rule)}
-.cta .caption{font-size:11px;line-height:1.55;max-width:190px}
-.proof{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;border-top:1px solid var(--rule)}
+.intro .eyeline{margin-top:30px}
+.intro h1{font-size:clamp(54px,4.9vw,76px);margin:22px 0 26px}
+.intro .lede{margin-left:0;max-width:500px;font-size:16px}
+.cta{display:flex;align-items:center;gap:22px;margin-top:32px}
+.cta .caption{font-size:13px;line-height:1.5;max-width:230px;color:#4d545c}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--rule)}
 .proof div{padding:20px 18px 0 0}
 .proof div+div{padding-left:18px;border-left:1px solid var(--rule)}
-.proof strong{display:block;font:400 34px/1 var(--sans);letter-spacing:-.05em}
+.proof strong{display:block;font:400 30px/1 var(--sans);letter-spacing:-.045em}
 .proof strong em{font-style:normal;color:var(--blue)}
 .proof span{display:block;margin-top:8px;font:10px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.04em}
 
@@ -91,7 +89,7 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
 .services summary span{font:10px var(--mono);width:22px}
 .services summary:after{content:'+';margin-left:auto;font-size:22px}
 .services details[open] summary:after{content:'−'}
-.services details p{font-size:14px;line-height:1.65;margin:4px 0 22px 42px;max-width:430px}
+.services details p{font-size:14px;line-height:1.65;margin:4px 0 22px 0;max-width:430px}
 .services .aside{font:11px/2 var(--mono);margin-top:30px;text-transform:uppercase;letter-spacing:.03em}
 
 /* 03 difference (brand blue chapter) */
@@ -153,9 +151,8 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
   .layout{grid-template-columns:39% 61%}
   .w-top,.w-bottom{left:24px;right:24px}
   .w-bottom h2{font-size:30px}
-  .intro h1{font-size:64px}.chapter h2{font-size:56px}
-  .intro .lede{margin-left:8%}
-  .cta{display:block}.cta .caption{margin-top:18px}
+  .intro h1{font-size:58px}.chapter h2{font-size:56px}
+  .cta{flex-wrap:wrap}
   .head nav{gap:16px}
 }
 @media(max-width:700px){
@@ -178,7 +175,7 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
   .proof{grid-template-columns:1fr 1fr}
   .proof div:nth-child(3){grid-column:1/-1;border-left:0;padding-left:0;border-top:1px solid var(--rule);margin-top:20px}
   .services summary{font-size:21px}
-  .services details p{margin-left:42px;font-size:13px}
+  .services details p{margin-left:0;font-size:13px}
   .person{grid-template-columns:88px 1fr;gap:18px}
   .person img{width:88px;height:112px}
   .person h3{font-size:22px}
@@ -202,7 +199,7 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
   <div class="w-top"><strong>WATERMAN</strong><span class="w-loc">Gilbert St, Adelaide</span></div>
   <div class="w-bottom">
     <h2 id="scene-title">Adelaide's first buyer's agency. Since 2003.</h2>
-    <div class="eyeline"><span id="scene-label">01 / Adelaide, South Australia</span><span>Scroll ↓</span></div>
+    <div class="eyeline"><span id="scene-label">Adelaide, South Australia</span><span>Scroll ↓</span></div>
   </div>
   <nav class="rail" aria-label="Sections">
     <a href="#intro" aria-label="Introduction" aria-current="true"></a>
@@ -216,7 +213,7 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
 
 <div class="content">
 
-<section class="chapter intro" id="intro" data-scene="home" data-title="Adelaide's first buyer's agency. Since 2003." data-label="01 / Adelaide, South Australia">
+<section class="chapter intro" id="intro" data-scene="home" data-title="Adelaide's first buyer's agency. Since 2003." data-label="Adelaide, South Australia">
   <header class="head">
     <a class="logo" href="#intro" aria-label="Waterman Property Advocates"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/ox3RnN67ScWx51oRraZc/media/69e89e02a48992f6898baca8.jpg" alt="Waterman Property Advocates"></a>
     <nav><a href="#services">Buy &amp; sell</a><a href="#team">Team</a><a href="#contact">Free consult ↗</a></nav>
@@ -235,42 +232,42 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
   </div>
 </section>
 
-<section class="chapter services" id="services" data-scene="bluestone" data-title="Buying, selling or moving on." data-label="02 / How we help">
-  <div class="idx"><span>02</span><span>HOW WE HELP</span></div>
+<section class="chapter services" id="services" data-scene="bluestone" data-title="Buying, selling or moving on." data-label="How we help">
+  <div class="idx"><span>HOW WE HELP</span></div>
   <h2>Buying, selling<br>or moving on?</h2>
   <details open>
-    <summary><span>01</span>Buyer advocacy</summary>
+    <summary>Buyer advocacy</summary>
     <p>We locate, investigate and negotiate your property within your buying capacity, whether it's a family home, an investment or a development site. That includes off-market opportunities and full due diligence before you commit.</p>
   </details>
   <details>
-    <summary><span>02</span>Vendor advocacy</summary>
+    <summary>Vendor advocacy</summary>
     <p>We don't sell property. We represent you: selecting the most suitable agent for your home, then overseeing the campaign and the negotiation through to the result. Waterman developed Seller Advocacy in 2009, after years of vendors asking for it.</p>
   </details>
   <details>
-    <summary><span>03</span>Downsizing</summary>
+    <summary>Downsizing</summary>
     <p>Working out what you need next, clearing and decluttering, then selling well and buying right. One team manages the whole move so it stays calm and well planned.</p>
   </details>
   <details>
-    <summary><span>04</span>Property clearances</summary>
+    <summary>Property clearances</summary>
     <p>Living and deceased estates cleared across Adelaide, for executors, downsizers and families moving into aged care. Donations and recycling first, then removal, repairs and restoration ready for sale. Site inspection and quote are free.</p>
   </details>
   <p class="aside">For home buyers, investors, sellers, executors and downsizers.</p>
 </section>
 
-<section class="chapter diff" id="difference" data-scene="home" data-title="Independent, on one side only." data-label="03 / Why independent">
-  <div class="idx"><span>03</span><span>WHY INDEPENDENT</span></div>
+<section class="chapter diff" id="difference" data-scene="home" data-title="Independent, on one side only." data-label="Why independent">
+  <div class="idx"><span>WHY INDEPENDENT</span></div>
   <h2>We don't sell<br>property. We<br>represent you.</h2>
   <p class="lede">A selling agent works for the vendor. Waterman works for you, with nothing to gain from which property you buy or which agent you choose.</p>
   <ul>
-    <li><span>01</span>Adelaide's first dedicated buyer's agency, established in early 2003.</li>
-    <li><span>02</span>Developed Seller Advocacy in 2009, so sellers get the same independent advice.</li>
-    <li><span>03</span>Licensed land agents on the team. Chris, Jodi and Matt bring more than 80 years of property experience between them.</li>
+    <li>Adelaide's first dedicated buyer's agency, established in early 2003.</li>
+    <li>Developed Seller Advocacy in 2009, so sellers get the same independent advice.</li>
+    <li>Licensed land agents on the team. Chris, Jodi and Matt bring more than 80 years of property experience between them.</li>
   </ul>
   <a class="line-link" href="#contact">Talk it through with us</a>
 </section>
 
-<section class="chapter team" id="team" data-scene="chris" data-title="Chris Waterman. Founder." data-label="04 / The team">
-  <div class="idx"><span>04</span><span>THE TEAM</span></div>
+<section class="chapter team" id="team" data-scene="chris" data-title="Chris Waterman. Founder." data-label="The team">
+  <div class="idx"><span>THE TEAM</span></div>
   <h2>The people<br>on your side.</h2>
   <div class="people">
     <article class="person">
@@ -293,8 +290,8 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
   </div>
 </section>
 
-<section class="chapter reviews" id="reviews" data-scene="bluestone" data-title="What clients say." data-label="05 / Client experiences">
-  <div class="idx"><span>05</span><span>CLIENT EXPERIENCES</span></div>
+<section class="chapter reviews" id="reviews" data-scene="bluestone" data-title="What clients say." data-label="Client experiences">
+  <div class="idx"><span>CLIENT EXPERIENCES</span></div>
   <h2>What clients<br>say.</h2>
   <div class="score"><span class="num">4.9</span><span class="stars" aria-hidden="true">★★★★★</span></div>
   <p class="count">From 45 Google reviews.</p>
@@ -310,8 +307,8 @@ a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var
   <div class="memberships"><span>Member REBAA</span><span>Member REISA</span></div>
 </section>
 
-<section class="chapter contact" id="contact" data-scene="home" data-title="Book a free consult." data-label="06 / Gilbert Street, Adelaide">
-  <div class="idx"><span>06</span><span>FREE CONSULT</span></div>
+<section class="chapter contact" id="contact" data-scene="home" data-title="Book a free consult." data-label="Gilbert Street, Adelaide">
+  <div class="idx"><span>FREE CONSULT</span></div>
   <h2>Talk to<br>Waterman about<br>your property.</h2>
   <p class="lede">Tell us what you're working on and we'll put you straight through to the right person. The first conversation is free and there's no obligation.</p>
   <label class="eyeline" for="topic">I'd like to talk about</label>
